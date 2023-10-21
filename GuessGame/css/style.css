@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    width: 100%;
+    height: 105vh;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image:  linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('../img/bgmain.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Anton';
+    color: #fff;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+/*
+ * Card styles
+ */
+
+.deck {
+    width: 660px;
+    min-height: 600px;
+    background: rgba(255, 255, 255, 0.4);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 12px 15px 20px 0 rgba(112, 139, 147, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3 0 2em;
+}
+
+.deck .card {
+    height: 125px;
+    width: 125px;
+    background: #2e3d49;
+    font-size: 0;
+    color: #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+.deck .card.open {
+    transform: rotateY(0);
+    background: #020ae4;
+    cursor: default;
+}
+
+.deck .card.show {
+    font-size: 33px;
+}
+
+.deck .card.match {
+    cursor: default;
+    background: #2acc02;
+    font-size: 33px;
+}
+
+/*
+ * Styles for the Score Panel
+ */
+
+.score-panel {
+    text-align: left;
+    width: 345px;
+    margin-bottom: 10px;
+}
+
+.score-panel .stars {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+
+.score-panel .stars li {
+    list-style: none;
+    display: inline-block;
+}
+
+.gold-star{color: gold}
+
+.score-panel .restart {
+    float: right;
+    cursor: pointer;
+}
+
+/* Popup */
+.popup {
+    background: #1a2524;
+    z-index: 1;
+    display: none;
+    margin: 0 auto;
+    width: 100%; 
+    height: 100%; 
+    position: fixed; 
+    left: 0;
+    top: 0;
+}
+
+.content {
+    padding: 10px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.562);
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    
+}
+
+.close {
+    color: #000;
+    float: right;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
